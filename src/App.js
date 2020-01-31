@@ -1,9 +1,17 @@
 import React from 'react';
 
-function App() {
+import Header from './components/Header';
+import Footer from './components/Footer';
+import Routes from './routes';
+
+import "./styles.css";
+
+const App = () => {
   return (
     <div className="App">
-      <h1> Platform Help </h1>
+      <Header />
+      <Routes />
+      <Footer />
     </div>
   );
 }

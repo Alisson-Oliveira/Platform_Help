@@ -8,24 +8,43 @@ export default class Main extends Component {
   emBreve = () => alert("Em breve...");
 
   render() {
+
+    const actions = [
+      {
+        key: 0,
+        title: "Calcular Média com Peso",
+        route: "/media",
+        action: this.emBreve,
+      },
+      {
+        key: 1,
+        title: "Calcular Média sem Peso",
+        route: "/media",
+        action: this.emBreve,
+      },
+      {
+        key: 2,
+        title: "Localicação Atual",
+        route: "/locate",
+        action: this.emBreve,
+      },
+    ];
+
     return (
       <div className="scroll-functions">
-        <div className="box-card">
-          <div className="box-50">
-            <h1 className="box-title"> Calcular Média </h1>
-          </div>
-          <div className="box-50">
-            <Link className="box-button" to={`/media`}> Acessar </Link>
-          </div>
-        </div>
-        <div className="box-card">
-          <div className="box-50">
-            <h1 className="box-title"> Localicação Atual </h1>
-          </div>
-          <div className="box-50">
-          <Link className="box-button" to={`/locate`}> Acessar </Link>
-          </div>
-        </div>
+        { 
+          actions.map(act => (  
+            <div key={ act.key } className="box-card">
+              <div className="box-50">
+                <h1 className="box-title"> { act.title } </h1>
+              </div>
+              <div className="box-50">
+                <Link className="box-button" to={ act.route }> Acessar </Link>
+              </div>
+            </div>
+            )
+          )
+        }
       </div>
     )
   }

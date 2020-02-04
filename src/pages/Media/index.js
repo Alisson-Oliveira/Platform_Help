@@ -4,6 +4,6 @@ import './styles.css';
 
 export default class Media extends Component {
   render() {
-    return <div className="config-media"> Teste Média </div>;
+    return <div className="config-media"> EM BREVE... </div>;
   }
 }

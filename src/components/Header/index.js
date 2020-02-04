@@ -6,7 +6,7 @@ import "./styles.css";
 
 const Header = () => (
   <>
-    <header id="main-header"> Platform Help </header>
+    <header id="main-header"> Plataforma de Ajuda </header>
     <div className="search-background">
       <header className="title-center">
         <h2> Funções simples e fáceis de usar </h2>

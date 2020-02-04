@@ -1,8 +1,10 @@
-@media (max-width: 1440px) {
+@media (max-width: 2560px) {
   .scroll-functions {
+    max-width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-evenly;
   }
   
   .box-card {
@@ -29,7 +31,7 @@
   .box-button {
     padding: 10px;
     border-radius: 5px;
-    border: 0;
+    border: 0px;
     background: #000;
     color: #fff;
     font-size: 12px;
@@ -41,9 +43,37 @@
   .box-button:hover {
     opacity: 0.75;
   }
+
+  .load-more {
+    margin: 15px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .about-article {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 20px;
+  }
+
+  .about-box {
+    max-width: 30%;
+    padding: 10px;
+  }
+
+  .about-box h1 {
+    text-align: center;
+    padding-bottom: 10px;
+  }
+
+  .about-box p {
+    text-align: justify;
+    text-indent: 40px;
+  }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 768px) {
   .scroll-functions {
     display: flex;
     flex-direction: column;
@@ -88,5 +118,4 @@
   .box-button:hover {
     opacity: 0.75;
   }
-
 }

@@ -31,7 +31,7 @@
   .box-button {
     padding: 10px;
     border-radius: 5px;
-    border: 0px;
+    border: 0;
     background: #000;
     color: #fff;
     font-size: 12px;
@@ -41,6 +41,15 @@
   }
   
   .box-button:hover {
+    opacity: 0.75;
+  }
+
+  .buttons button[disabled] {
+    opacity: 0.75;
+    cursor: default;
+  }
+
+  .buttons button:hover {
     opacity: 0.75;
   }
 
@@ -73,7 +82,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 956px) {
   .scroll-functions {
     display: flex;
     flex-direction: column;
@@ -117,5 +126,28 @@
   
   .box-button:hover {
     opacity: 0.75;
+  }
+
+  .about-article {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 20px;
+  }
+
+  .about-box {
+    max-width: 90%;
+    padding: 10px;
+  }
+
+  .about-box h1 {
+    text-align: center;
+    padding-bottom: 10px;
+  }
+
+  .about-box p {
+    text-align: justify;
+    text-indent: 40px;
   }
 }

@@ -18,7 +18,7 @@ export default class Main extends Component {
     
     return (
       <div id="main-app">
-        {
+        { 
           info.map(page => (
             <div key={page.id_page} className="scroll-functions">
             {
@@ -42,13 +42,12 @@ export default class Main extends Component {
         <div className="about-article">
           <div className="about-box">
             <article className="about-text">
-              <h1> Sobre a Plataforma de Ajuda </h1>
-              <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-              industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
-              scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
-              into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
-              release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
-              software like Aldus PageMaker including versions of Lorem Ipsum. </p>
+              <h1> Sobre </h1>
+              <p> A Plataforma de Ajuda foi criada como um simples projeto de conhecimento sobre React JS, 
+              Javascript, HTML5, CSS3 e Resposividade, tudo feito manualmente. Busco ajudar as pessoas que precisem 
+              de funções simples do dia a dia e as user de forma rápida, sem precisar escrever uma linha de código e 
+              sem usar lápis/caneta e papel. 
+              </p>
             </article>
           </div>
           <div className="about-box">

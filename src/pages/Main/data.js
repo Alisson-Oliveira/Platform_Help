@@ -7,26 +7,26 @@ const Data = [
     id_page: 0,
     actions: [{
       key: 0,
-      title: "Média com Peso",
-      route: "/media",
+      title: "Calular Notas sem Peso",
+      route: "/sempeso",
       action: emBreve,
     },
     {
       key: 1,
-      title: "Média sem Peso",
-      route: "/media",
+      title: "Calular Notas com Peso",
+      route: "/embreve",
       action: emBreve,
     },
-    { 
+    {
       key: 2,
-      title: "Localicação Atual",
-      route: "/locate",
+      title: "Área do Retângulo",
+      route: "/embreve",
       action: emBreve,
     },
     {
       key: 3,
-      title: "Número Randômico",
-      route: "/media",
+      title: "Área do Quadrado",
+      route: "/embreve",
       action: emBreve,
     }]
   },
@@ -34,26 +34,26 @@ const Data = [
     id_page: 1,
     actions: [{
       key: 0,
-      title: "Sortear Strings",
-      route: "/media",
+      title: "Sortear Palavras",
+      route: "/embreve",
       action: emBreve,
     },
     {
       key: 1,
-      title: "Calcular IMC",
-      route: "/media",
+      title: "Sortear Números",
+      route: "/embreve",
       action: emBreve,
     },
-    {
+    { 
       key: 2,
-      title: "Área do Retângulo",
-      route: "/locate",
+      title: "Localicação Atual",
+      route: "/embreve",
       action: emBreve,
     },
     {
       key: 3,
-      title: "Área do Quadrado",
-      route: "/media",
+      title: "Calcular IMC",
+      route: "/embreve",
       action: emBreve,
     }]
   }

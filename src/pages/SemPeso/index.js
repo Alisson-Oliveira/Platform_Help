@@ -4,11 +4,11 @@ import './styles.css';
 
 export default class SemPeso extends Component {
   state = {
-    inputNumber: 2,
+    inputs: 2,
   }
 
   embreve = () => {
-    return alert('EM BREVE');
+    return alert('EM BREVE...');
   }
 
   componentDidMount() {
@@ -16,15 +16,15 @@ export default class SemPeso extends Component {
   }
 
   loadPage = (newInput = 2) => {
-    const { inputNumber } = this.state;
+    const { inputs } = this.state;
 
-    if (inputNumber === 4) return;
+    if (inputs === 4) return;
 
-    for (let i = 1; i <= inputNumber; i++) {
+    for (let i = 1; i <= inputs; i++) {
       this.createNewInput(i);
     }
 
-    this.setState({ inputNumber: newInput });
+    this.setState({ inputs: newInput });
   }
 
   createNewInput = (id) => {
@@ -47,31 +47,31 @@ export default class SemPeso extends Component {
   }
 
   loadInputNext = () => {
-    const { inputNumber } = this.state;
+    const { inputs } = this.state;
 
-    if (inputNumber === 4) return;
+    if (inputs === 4) return;
 
-    const newInput = inputNumber + 1;
+    const newInput = inputs + 1;
 
     this.createNewInput(newInput);
 
-    this.setState({ inputNumber: newInput });
+    this.setState({ inputs: newInput });
   };
 
   loadInputPrev = () => {
-    const { inputNumber } = this.state;
+    const { inputs } = this.state;
 
-    if (inputNumber === 2) return;
+    if (inputs === 2) return;
 
-    const newInput = inputNumber - 1;
+    const newInput = inputs - 1;
 
-    this.removeNewInput(inputNumber);
+    this.removeNewInput(inputs);
 
-    this.setState({ inputNumber: newInput });
+    this.setState({ inputs: newInput });
   };
 
   render() {
-    const { inputNumber } = this.state;
+    const { inputs } = this.state;
     
     return (
       <div className="config-actions">
@@ -81,27 +81,27 @@ export default class SemPeso extends Component {
             <div className="inputs-row">
               <div className="inputs"> </div>
               <div>
-                <button className="buttons" onClick={this.loadInputNext} disabled={inputNumber === 4} id="add" type="submit"> + </button>
-                <button className="buttons" onClick={this.loadInputPrev} disabled={inputNumber === 2} id="del" type="submit"> - </button>
+                <button className="buttons" onClick={this.loadInputNext} disabled={inputs === 4} id="add" type="submit"> + </button>
+                <button className="buttons" onClick={this.loadInputPrev} disabled={inputs === 2} id="del" type="submit"> - </button>
               </div>
             </div>
             <div className="inputs-row">
-              <div className="inputs-label-media">
-                <label> Média </label>
-                <input className="inputs-media"/>
-              </div>
+              <label> Média </label>
+              <input className="inputs-media"/>
               <button onClick={this.embreve} className="buttons" id="calcular" type="submit"> Calcular </button>
             </div>
             <label> Detalhes </label>
-            <div className="result-media">
+            <div className="details-config">
               <div className="result-colunm">
                 <h5> Média Final </h5>
                 <strong> 0.0 </strong>
               </div>
+              <div className="line" />
               <div className="result-colunm">
                 <h5> Média Restante </h5>
                 <strong> 0.0 </strong>
               </div>
+              <div className="line" />
               <div className="result-colunm">
                 <h5> Situação </h5>
                 <strong> Reprovado </strong>

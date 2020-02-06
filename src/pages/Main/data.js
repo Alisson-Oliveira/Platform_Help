@@ -7,8 +7,8 @@ const Data = [
     id_page: 0,
     actions: [{
       key: 0,
-      title: "Calular Notas sem Peso",
-      route: "/sempeso",
+      title: "Calular Notas",
+      route: "/calcular-notas",
       action: emBreve,
     },
     {
@@ -58,5 +58,7 @@ const Data = [
     }]
   }
 ]
+
+//  GERADOR DE SIGLAS
 
 export default Data;

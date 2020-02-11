@@ -9,7 +9,7 @@ export default class Main extends Component {
     info: Data,
   }
   
-  loadMore = (number = 0) => {
+  loadMore = () => {
     return alert("Em breve...");
   }
 

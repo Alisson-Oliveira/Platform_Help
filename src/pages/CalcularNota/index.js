@@ -6,8 +6,7 @@ export default class CalcularNota extends Component {
   state = {
     inputs: 2,
     media_final: 0,
-    media_restante: 0,
-    situacao: false,
+    status: "-",
   }
 
   componentDidMount() {
@@ -25,6 +24,8 @@ export default class CalcularNota extends Component {
     const calInputEl_2 = document.getElementById("nota-2");
     const calInputEl_3 = document.getElementById("nota-3");
     const calInputEl_4 = document.getElementById("nota-4");
+
+    const mediaInputEl = document.getElementById("input-media");
     
     if (inputs === 2) {
       if (calInputEl_1.value === "") return this.errorInput();
@@ -34,8 +35,16 @@ export default class CalcularNota extends Component {
                         parseFloat(calInputEl_2.value);
 
       const media = allNotas / 2;
+      const media_geral = mediaInputEl.value;
 
-      this.setState({ media_final: media });
+      let status = "-";
+      if (media >= media_geral) {
+        status = "Aprovado";
+      } else {
+        status = "Reprovado"
+      }
+
+      this.setState({ media_final: media, status });
     }
     
     if (inputs === 3) {
@@ -46,7 +55,18 @@ export default class CalcularNota extends Component {
       const allNotas =  parseFloat(calInputEl_1.value) +
                         parseFloat(calInputEl_2.value) +
                         parseFloat(calInputEl_3.value);
-      console.log(allNotas);
+      
+      const media = allNotas / 3;
+      const media_geral = mediaInputEl.value;
+
+      let status = "-";
+      if (media >= media_geral) {
+        status = "Aprovado";
+      } else {
+        status = "Reprovado"
+      }
+
+      this.setState({ media_final: media, status });
     }
 
     if (inputs === 4) {
@@ -59,8 +79,34 @@ export default class CalcularNota extends Component {
                         parseFloat(calInputEl_2.value) +
                         parseFloat(calInputEl_3.value) +
                         parseFloat(calInputEl_4.value);
-      console.log(allNotas);
+      
+      const media = allNotas / 4;
+      const media_geral = mediaInputEl.value;
+
+      let status = "-";
+      if (media >= media_geral) {
+        status = "Aprovado";
+      } else {
+        status = "Reprovado"
+      }
+
+      this.setState({ media_final: media, status });
     }
+  };
+
+  loadStatus = () => {
+    const { media_restante } = this.state;
+    const media = document.getElementById("input-media").value;
+    
+    let status = "-";
+    
+    if (media_restante <= media) {
+      status = "Aprovado";
+    } else {
+      status = "Reprovado"
+    }
+
+    this.setState({ situacao: status});
   };
 
   loadPage = (newInput = 2) => {
@@ -119,7 +165,7 @@ export default class CalcularNota extends Component {
   };
 
   render() {
-    const { inputs, media_final, media_restante, situacao } = this.state;
+    const { inputs, media_final, status } = this.state;
 
     return (
       <div className="config-actions">
@@ -135,7 +181,7 @@ export default class CalcularNota extends Component {
             </div>
             <div className="inputs-row">
               <label> Média </label>
-              <input className="inputs-media"/>
+              <input id="input-media" className="inputs-media"/>
               <button onClick={this.calularNota} className="buttons" id="calcular" type="submit"> Calcular </button>
             </div>
             <label> Detalhes </label>
@@ -146,13 +192,8 @@ export default class CalcularNota extends Component {
               </div>
               <div className="line" />
               <div className="result-colunm">
-                <h6> Média Restante </h6>
-                <h3> {media_restante} </h3>
-              </div>
-              <div className="line" />
-              <div className="result-colunm">
                 <h6> Situação </h6>
-                <strong> {situacao} </strong>
+                <strong> {status} </strong>
               </div>
             </div>
           </div>

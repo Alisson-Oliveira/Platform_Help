@@ -4,6 +4,10 @@ import React from "react";
 
 import "./styles.css";
 
+const emBreve = () => {
+  return alert("EM BREVE...");
+}
+
 const Header = () => (
   <>
     <header id="main-header"> Plataforma de Ajuda </header>
@@ -13,7 +17,7 @@ const Header = () => (
       </header>
       <article className="search-center">
         <input id="busca" type="text" name="pesquisar" placeholder="Pesquisar função" />
-        <button id="busca" type="submit"> Ok </button>
+        <button onClick={emBreve} id="busca" type="submit"> Ok </button>
       </article>
     </div>
   </>
